@@ -2,12 +2,43 @@
 #include <LiquidCrystal_I2C.h>
 #include <SPI.h>
 #include <Wire.h>
+#include "pitches.h"
 
 // Define os pinos do módulo RFID
 const int chipSelectPin = 10;
 const int resetPowerDownPin = 9;
 MFRC522 rfid(chipSelectPin, resetPowerDownPin);
 LiquidCrystal_I2C lcd(0x27, 16, 2);
+const int buzzerPin = 7;
+
+void playWinSound() {
+  tone(buzzerPin, 1047); // C6 (261.63 Hz)
+  delay(1000);
+  noTone(buzzerPin);
+  delay(100);
+  tone(buzzerPin, 1319); // E6 (329.63 Hz)
+  delay(1000);
+  noTone(buzzerPin);
+  delay(100);
+  tone(buzzerPin, 1568); // G6 (392.00 Hz)
+  delay(1000);
+  noTone(buzzerPin);
+}
+
+void playFailSound() {
+  tone(buzzerPin, 784); // G5 (196.00 Hz)
+  delay(1000);
+  noTone(buzzerPin);
+  delay(100);
+  tone(buzzerPin, 659); // E5 (164.81 Hz)
+  delay(1000);
+  noTone(buzzerPin);
+  delay(100);
+  tone(buzzerPin, 523); // C5 (130.81 Hz)
+  delay(1000);
+  noTone(buzzerPin);
+}
+
 
 // Estrutura para armazenar o mapeamento UID -> letra
 struct UidToletter {
@@ -54,6 +85,8 @@ void setup() {
   Serial.println("Bem-vindo ao VOCAB! Aproxime o cartão");
   SPI.begin();
   rfid.PCD_Init();
+
+  pinMode(buzzerPin, OUTPUT);
  
   // Display
   lcd.init();
@@ -100,9 +133,7 @@ void loop() {
         if (uid == array[i].uid) {
           String letra = array[i].letra;
           if (vogalIndex < 4 && vogaisParaPreencher[vogalIndex] == letra) {
-            digitalWrite(gled, HIGH);
-            delay(1000);
-            digitalWrite(gled, LOW);
+            
             // Preenche a próxima vogal na palavra
             for (int k = 0; k < palavraAtual.length(); k++) {
               if (palavraAtual.charAt(k) == '_') {
@@ -110,6 +141,10 @@ void loop() {
                 vogalIndex++;
                 lcd.clear();
                 lcd.print(palavraAtual);
+                digitalWrite(gled, HIGH);
+                delay(1000);
+                digitalWrite(gled, LOW);
+                playWinSound();
                 break;
               }
             }
@@ -117,6 +152,7 @@ void loop() {
             digitalWrite(rled, HIGH);
             delay(1000);
             digitalWrite(rled, LOW);
+            playFailSound();
           } 
           }
         }
