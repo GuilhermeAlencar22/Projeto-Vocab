@@ -33,8 +33,8 @@ O VOCAB é, portanto, uma ferramenta poderosa e inclusiva que combina tecnologia
 * Thales Lima (tsl2@cesar.school)
 * Eduarda Albuquerque (meas@cesar.school)
 # Links:
-<p>Links </p>
-    <li>
+
+ <li>
     <a  href="https://miro.com/app/board/uXjVNk2c4A8=/"
       >Link do Miro </a
     >
