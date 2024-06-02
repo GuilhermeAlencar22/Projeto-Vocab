@@ -46,3 +46,8 @@ O VOCAB é, portanto, uma ferramenta poderosa e inclusiva que combina tecnologia
     <a  href="https://sites.google.com/cesar.school/projeto-1-g5/in%C3%ADcio"
       >Link do Site </a
     >
+        <li>
+    <a  href="https://www.canva.com/design/DAGCC7F67m4/bUGFaQ6TLqwyTQgcmhHS_A/edit?utm_content=DAGCC7F67m4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+      >Link do CANVAS MODELAGEM PRÁTICA </a
+    >
+
