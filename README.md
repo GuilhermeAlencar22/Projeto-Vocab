@@ -32,6 +32,7 @@ O VOCAB é, portanto, uma ferramenta poderosa e inclusiva que combina tecnologia
 * Beatriz Costa (bvcp@cesar.school)
 * Thales Lima (tsl2@cesar.school)
 * Eduarda Albuquerque (meas@cesar.school)
+* Nina França (nhffbs@cesar.school)
 # Links:
 
  <li>
