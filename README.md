@@ -31,17 +31,18 @@ O VOCAB é, portanto, uma ferramenta poderosa e inclusiva que combina tecnologia
 * Augusto Parin (amp@cesar.school)
 * Beatriz Costa (bvcp@cesar.school)
 * Thales Lima (tsl2@cesar.school)
+* Eduarda Albuquerque (meas@cesar.school)
 # Links:
 <p>Links </p>
     <li>
     <a  href="https://miro.com/app/board/uXjVNk2c4A8=/"
-      >Link do Miro /a
+      >Link do Miro </a
     >
      <li>
     <a  href="https://www.canva.com/design/DAF_5zR12xo/7beKRmVd1VVMelCQ0m2JnA/edit"
-      >Link do CANVAS PROBLEMA CABELUDO/a
+      >Link do CANVAS PROBLEMA CABELUDO</a
     >
     <li>
     <a  href="https://sites.google.com/cesar.school/projeto-1-g5/in%C3%ADcio"
-      >Link do Site /a
+      >Link do Site </a
     >
