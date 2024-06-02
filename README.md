@@ -1,6 +1,6 @@
 # projeto-vocab
 Este e o repositorio do projeto do grupo 5 o VOCAB uma ferramenta de aprendisado voltado a pessoas idosas que possuem dificuldade ou nao sabem ler e escrever
-O VOCAB é uma inovadora ferramenta de ensino desenvolvida para ajudar adultos que não sabem ler ou escrever a adquirir habilidades básicas de alfabetização. Este método utiliza uma abordagem interativa e lúdica, facilitando o aprendizado através da associação de imagens e sons com letras e palavras.
+O nosso projeto e o VOCAB uma ferramenta voltada ao ensino e desenvolvimento para ajudar adultos que não sabem ler ou escrever a adquirir habilidades básicas de alfabetização. Este método utiliza uma abordagem interativa e lúdica, facilitando o aprendizado através da associação de imagens e sons com letras e palavras.
 
 ### Como Funciona o VOCAB
 
@@ -26,5 +26,7 @@ O VOCAB é uma inovadora ferramenta de ensino desenvolvida para ajudar adultos q
 
 O VOCAB é, portanto, uma ferramenta poderosa e inclusiva que combina tecnologia, interatividade e uma abordagem centrada no aluno para promover a alfabetização de adultos de forma eficaz e prazerosa.
 # Equipe:
-* Rodrigo leal (rlm2@cesar.school)
-* Guilherme alencar (gaac@cesar.school)
+* Rodrigo Leal (rlm2@cesar.school)
+* Guilherme Alencar (gaac@cesar.school)
+* Augusto Parin (amp@cesar.school)
+* Beatriz Costa (bvcp@cesar.school
