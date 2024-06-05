@@ -2,43 +2,13 @@
 #include <LiquidCrystal_I2C.h>
 #include <SPI.h>
 #include <Wire.h>
-#include "pitches.h"
 
 // Define os pinos do módulo RFID
 const int chipSelectPin = 10;
 const int resetPowerDownPin = 9;
 MFRC522 rfid(chipSelectPin, resetPowerDownPin);
 LiquidCrystal_I2C lcd(0x27, 16, 2);
-const int buzzerPin = 7;
-
-void playWinSound() {
-  tone(buzzerPin, 1047); // C6 (261.63 Hz)
-  delay(1000);
-  noTone(buzzerPin);
-  delay(100);
-  tone(buzzerPin, 1319); // E6 (329.63 Hz)
-  delay(1000);
-  noTone(buzzerPin);
-  delay(100);
-  tone(buzzerPin, 1568); // G6 (392.00 Hz)
-  delay(1000);
-  noTone(buzzerPin);
-}
-
-void playFailSound() {
-  tone(buzzerPin, 784); // G5 (196.00 Hz)
-  delay(1000);
-  noTone(buzzerPin);
-  delay(100);
-  tone(buzzerPin, 659); // E5 (164.81 Hz)
-  delay(1000);
-  noTone(buzzerPin);
-  delay(100);
-  tone(buzzerPin, 523); // C5 (130.81 Hz)
-  delay(1000);
-  noTone(buzzerPin);
-}
-
+const int buzzerPin = 6;
 
 // Estrutura para armazenar o mapeamento UID -> letra
 struct UidToletter {
@@ -52,7 +22,7 @@ UidToletter array[] = {
   {"5342661a", "E"},
   {"371721a", "I"},
   {"238c751a", "O"},
-  {"a31f611a", "U"},
+  {"c336741a", "U"},
 };
 int tamanhoArray = sizeof(array) / sizeof(array[0]);
 
@@ -65,8 +35,10 @@ struct UidToword {
 UidToword arrayP[] = {
   {"a396631a", "C_D__R_", {"A", "E", "I", "A"}},
   {"932c771a", "C_V_L_", {"A", "A", "O", ""}},
-  {"9439ab1e", "L__T_", {"E", "I", "E", ""}},
-  {"3676f1a", "_B_C_X_", {"A", "A", "A", "I"}},
+  {"9439ab1e", "C_M_", {"A", "A", "", ""}},
+  {"3676f1a", "X_C_R_", {"I", "A", "A", ""}},
+  {"e33a741a", "L_R_NJ_", {"A", "A", "A", ""}},
+  //adicionar UVA
 };
 
 int tamanhoArrayP = sizeof(arrayP) / sizeof(arrayP[0]);
@@ -78,8 +50,10 @@ String vogaisParaPreencher[4];  // Armazena as vogais para a palavra atual
 int vogalIndex = 0;  // Índice para a próxima vogal a ser preenchida
 
 void setup() {
+  pinMode(buzzerPin, OUTPUT);
   pinMode(gled, OUTPUT);
   pinMode(rled, OUTPUT);
+  pinMode(7,INPUT_PULLUP);
   Serial.begin(9600);
   Wire.begin();
   Serial.println("Bem-vindo ao VOCAB! Aproxime o cartão");
@@ -98,18 +72,24 @@ void setup() {
   delay(5000);
   lcd.clear();
   lcd.setCursor(3, 0);
-  lcd.print("Aproxime o");
-  lcd.setCursor(4, 1);
-  lcd.print("cartao");
+  lcd.print("Aproxime");
+  lcd.setCursor(3,1);
+  lcd.print("o cartao");
 }
-
 void loop() {
+  if (!digitalRead(7)){
+    lcd.clear();
+    lcd.setCursor(3, 0);
+    lcd.print("Aproxime");
+    lcd.setCursor(3,1);
+    lcd.print("o cartao");
+    delay(100);
+  }
   if (rfid.PICC_IsNewCardPresent() && rfid.PICC_ReadCardSerial()) {
     String uid = "";
     for (byte i = 0; i < rfid.uid.size; i++) {
       uid += String(rfid.uid.uidByte[i], HEX);
     }
-    Serial.println(uid);
 
     // Verifica se o UID corresponde a uma palavra
     bool palavraEncontrada = false;
@@ -142,20 +122,38 @@ void loop() {
                 lcd.clear();
                 lcd.print(palavraAtual);
                 digitalWrite(gled, HIGH);
+                // tone(buzzerPin, 392);
+                buzzerAcerto();
                 delay(1000);
+                // noTone(buzzerPin);
                 digitalWrite(gled, LOW);
-                playWinSound();
+                if (k == palavraAtual.length() - 1) {
+                  noTone(buzzerPin);
+                  tone(buzzerPin, 392);
+                  delay(1000);
+                  noTone(buzzerPin);
+                  lcd.clear();
+                  lcd.setCursor(3,0);
+                  lcd.print("Parabens!");
+                }
                 break;
               }
             }
           }else{
             digitalWrite(rled, HIGH);
+            tone(buzzerPin, 260);
             delay(1000);
+            noTone(buzzerPin);
             digitalWrite(rled, LOW);
-            playFailSound();
-          } 
+          }
           }
         }
       }
     }
+  }
+
+  void buzzerAcerto() {
+    tone(buzzerPin, 260);
+    delay(100);
+    noTone(buzzerPin);
   }
