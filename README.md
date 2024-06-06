@@ -25,24 +25,34 @@ O nosso projeto e o VOCAB uma ferramenta voltada ao ensino e desenvolvimento par
 
 O VOCAB é, portanto, uma ferramenta poderosa e inclusiva que combina tecnologia, interatividade e uma abordagem centrada no aluno para promover a alfabetização de adultos de forma eficaz e prazerosa.
 # Funcionamento
-Para utilizar o VOCAB, siga os passos abaixo:
+Para utilizar o VOCAB, siga os passos detalhados abaixo:
 
-1. **Baixar e Instalar o IDE do Arduino**: Primeiro, é necessário fazer o download e a instalação do Arduino IDE no seu computador.
+1. **Instalar o Arduino IDE**:
+   - Baixe e instale o Arduino IDE no seu computador a partir do site oficial do Arduino.
 
-2. **Instalar Bibliotecas Necessárias**:
-   - Baixe e instale a biblioteca **MFRC522** para a leitura de RFID.
-   - Baixe e instale a biblioteca **LiquidCrystal_I2C** para controlar o display LCD.
+2. **Instalar as Bibliotecas Necessárias**:
+   - Abra o Arduino IDE e vá em **Sketch** > **Incluir Biblioteca** > **Gerenciar Bibliotecas**.
+   - Procure e instale a biblioteca **MFRC522** para leitura de RFID.
+   - Procure e instale a biblioteca **LiquidCrystal_I2C** para controlar o display LCD.
 
-3. **Baixar o Código**: Acesse o GitHub do projeto e baixe o código localizado no diretório `main`.
+3. **Baixar o Código do Projeto**:
+   - Acesse o repositório GitHub do projeto VOCAB.
+   - Baixe o código fonte localizado no diretório `main`.
 
-4. **Carregar o Código no Arduino**: Abra o Arduino IDE, carregue o código baixado e faça o upload para a placa Arduino.
+4. **Carregar o Código no Arduino**:
+   - Conecte sua placa Arduino ao computador.
+   - Abra o Arduino IDE, carregue o código baixado e faça o upload para a placa Arduino.
 
-5. **Iniciar o VOCAB**: Conecte o Arduino à fonte de energia e ligue o dispositivo.
+5. **Ligar o VOCAB**:
+   - Conecte o Arduino à fonte de alimentação e ligue o dispositivo.
 
-6. **Usar o VOCAB**:
-   - Aproximar um cartão contendo a imagem de um animal ou objeto ao leitor RFID.
-   - Em seguida, aproxime os cartões com as vogais correspondentes para completar a palavra exibida no display.
-   - Após completar a palavra corretamente, pressione o botão para continuar para a próxima rodada do jogo.
+6. **Utilizar o VOCAB**:
+   - Aproximar um cartão RFID que contenha a imagem de um animal ou objeto ao leitor RFID do VOCAB.
+   - O display LCD mostrará a palavra correspondente com as vogais faltando.
+   - Aproximar os cartões RFID com as vogais correspondentes ao leitor RFID para completar a palavra.
+   - Após completar corretamente a palavra, pressione o botão no dispositivo para continuar para a próxima rodada do jogo.
+
+Seguindo esses passos, você estará pronto para usar o VOCAB e aproveitar esta ferramenta educativa.
 
 Seguindo esses passos, você estará pronto para utilizar o VOCAB e aproveitar o jogo educativo.
 # Equipe:
