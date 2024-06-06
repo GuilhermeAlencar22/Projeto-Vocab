@@ -54,7 +54,6 @@ Para utilizar o VOCAB, siga os passos detalhados abaixo:
 
 Seguindo esses passos, você estará pronto para usar o VOCAB e aproveitar esta ferramenta educativa.
 
-Seguindo esses passos, você estará pronto para utilizar o VOCAB e aproveitar o jogo educativo.
 # Equipe:
 * Rodrigo Leal (rlm2@cesar.school)
 * Guilherme Alencar (gaac@cesar.school)
