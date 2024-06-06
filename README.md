@@ -37,7 +37,7 @@ Para utilizar o VOCAB, siga os passos detalhados abaixo:
 
 3. **Baixar o Código do Projeto**:
    - Acesse o repositório GitHub do projeto VOCAB.
-   - Baixe o código fonte localizado no diretório `main`.
+   - Baixe o código fonte localizado no diretório `main.ino`.
 
 4. **Carregar o Código no Arduino**:
    - Conecte sua placa Arduino ao computador.
