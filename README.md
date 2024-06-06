@@ -24,6 +24,27 @@ O nosso projeto e o VOCAB uma ferramenta voltada ao ensino e desenvolvimento par
 - **Integração Social**: Facilitar a inclusão social e digital dos adultos, permitindo que participem mais ativamente da sociedade.
 
 O VOCAB é, portanto, uma ferramenta poderosa e inclusiva que combina tecnologia, interatividade e uma abordagem centrada no aluno para promover a alfabetização de adultos de forma eficaz e prazerosa.
+# Funcionamento
+Para utilizar o VOCAB, siga os passos abaixo:
+
+1. **Baixar e Instalar o IDE do Arduino**: Primeiro, é necessário fazer o download e a instalação do Arduino IDE no seu computador.
+
+2. **Instalar Bibliotecas Necessárias**:
+   - Baixe e instale a biblioteca **MFRC522** para a leitura de RFID.
+   - Baixe e instale a biblioteca **LiquidCrystal_I2C** para controlar o display LCD.
+
+3. **Baixar o Código**: Acesse o GitHub do projeto e baixe o código localizado no diretório `main`.
+
+4. **Carregar o Código no Arduino**: Abra o Arduino IDE, carregue o código baixado e faça o upload para a placa Arduino.
+
+5. **Iniciar o VOCAB**: Conecte o Arduino à fonte de energia e ligue o dispositivo.
+
+6. **Usar o VOCAB**:
+   - Aproximar um cartão contendo a imagem de um animal ou objeto ao leitor RFID.
+   - Em seguida, aproxime os cartões com as vogais correspondentes para completar a palavra exibida no display.
+   - Após completar a palavra corretamente, pressione o botão para continuar para a próxima rodada do jogo.
+
+Seguindo esses passos, você estará pronto para utilizar o VOCAB e aproveitar o jogo educativo.
 # Equipe:
 * Rodrigo Leal (rlm2@cesar.school)
 * Guilherme Alencar (gaac@cesar.school)
