@@ -83,3 +83,8 @@ Seguindo esses passos, você estará pronto para usar o VOCAB e aproveitar esta 
       >Link do CANVAS MODELAGEM PRÁTICA </a
     >
 
+ <li>
+    <a  href="https://docs.google.com/document/d/1fFjkvwgZhzSbUOJ_HViOMMmq2kYCrwXq-0NppeOQjFg/edit?usp=sharing"
+      >Link do Arquivo tutorial </a
+    >
+
